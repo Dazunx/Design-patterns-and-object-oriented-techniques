@@ -18,7 +18,7 @@ namespace DesignPatterns
         }
         public void Print(string message)
         {
-            Console.WriteLine(message);
+            Console.WriteLine(message + "~");
         }
     }
 
@@ -155,6 +155,9 @@ namespace DesignPatterns
             // TODO#9: Ensure that only one Printer instance is used throughout the application.
             //         Try to create new Printer object and compare the two objects to check,
             //         that the new printer object is the same instance
+            Printer printer1 = Printer.Instance;
+            printer1.Print("Hi World");
+
             MakeExam(new ConcreteExamFactory());
 
             // TODO#10: Use Abstract Factory to create different types of exams.
